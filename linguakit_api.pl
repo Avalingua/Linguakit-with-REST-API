@@ -64,7 +64,7 @@ get '/' => sub { "Hello World" };
 
 
 
-post '/:module' => sub {
+post '/v2.0/:module' => sub {
 	my $LING = body_parameters->get('lang');
 	my $MOD = route_parameters->get('module');
 	my $TEXT = body_parameters->get('text');
