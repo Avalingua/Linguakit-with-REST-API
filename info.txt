@@ -1,0 +1,4 @@
+
+## Fatpack help to pack dependencies in the script file
+
+fatpack pack linguakit_api.pl >linguakit_api_packed.pl 
