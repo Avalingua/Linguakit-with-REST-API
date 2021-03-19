@@ -65,6 +65,9 @@ get '/' => sub { "Hello World" };
 
 
 post '/v2.0/:module' => sub {
+    header 'Content-Type' => 'application/json';
+    header 'Access-Control-Allow-Origin' => '*';
+    
 	my $LING = body_parameters->get('lang');
 	my $MOD = route_parameters->get('module');
 	my $TEXT = body_parameters->get('text');
