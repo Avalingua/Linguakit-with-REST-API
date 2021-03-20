@@ -5,4 +5,8 @@ A REST API to access linguakit code.
 Multilingual toolkit for NLP: dependency parser, PoS tagger, NERC, multiword extractor, sentiment analysis, etc. 
 
 ## How to install
-`cpanm --installdeps .`
+`sudo apt install cpanminus libplack-perl`
+`sudo cpanm --installdeps .`
+
+## How to deploy
+``
