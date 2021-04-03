@@ -9,7 +9,9 @@ Multilingual toolkit for NLP: dependency parser, PoS tagger, NERC, multiword ext
 `sudo cpanm --installdeps .`
 
 ## How to deploy
-``
+`ubic-admin setup`
+`cp scripts/ubic_linguakit ~/ubic/service/linguakit`
+`ubic start linguakit`
 
 
 ## Experimental
