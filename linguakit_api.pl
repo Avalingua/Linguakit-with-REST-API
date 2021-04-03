@@ -188,7 +188,7 @@ post '/v2.0/:module' => sub {
             return encode_json($result);
         }
 
-    }elsif($MOD eq "aval"){  ##entity linking
+    }elsif($MOD eq "aval"){  ## avalingua
         if($OUTPUT eq "xml"){
             my $result = Avalingua::avalingua($TEXT,$LING,"xml");
             return encode_json($result);
