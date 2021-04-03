@@ -10,3 +10,10 @@ Multilingual toolkit for NLP: dependency parser, PoS tagger, NERC, multiword ext
 
 ## How to deploy
 ``
+
+
+## Experimental
+
+### Fatpack help to pack dependencies in the script file (not needed now)
+
+fatpack pack linguakit_api.pl >linguakit_api_packed.pl 
