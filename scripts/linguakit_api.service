@@ -1,0 +1,8 @@
+[Unit]
+After=network.service
+
+[Service]
+ExecStart=/home/folerpa/Linguakit-with-REST-API/run_linguakit_api.sh
+
+[Install]
+WantedBy=default.target

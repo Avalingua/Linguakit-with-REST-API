@@ -1,0 +1,21 @@
+use Ubic::Service::Plack;
+return Ubic::Service::Plack->new({
+	server => "Starman",
+	server_args => {
+		env => 'production',
+   		workers => 10,
+	   	port => 3000,
+		user => 'folerpa',
+	},
+
+	user => 'folerpa',
+	app => '/home/folerpa/Linguakit-with-REST-API/linguakit_api.pl',
+	app_name => 'linguakit-api',
+
+
+       	ubic_log => '/opt/linguakit/log/ubic/ubic.log',
+        stdout   => '/opt/linguakit/log/app/stdout.log',
+        stderr   => '/opt/linguakit/log/app/stderr.log',
+
+});
+
