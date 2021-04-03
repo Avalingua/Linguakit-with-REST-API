@@ -8,7 +8,7 @@ binmode STDOUT, ':utf8';
 
 use Data::Dump qw(dump);
 use JSON;
-
+use Cwd 'getcwd';
 use Dancer2;
 
 ############################
@@ -17,46 +17,47 @@ use Dancer2;
 
 my $PROGS = "scripts";
 my $DIRPARSER = "parsers";
+my $basedir = getcwd($0);
 
 my @lings = ("es","pt","gl","en");
 @lings = ("es");
 for my $LING (@lings) {
 	#print $LING."\n";
 
-	do "./linguakit_original/$DIRPARSER/parserDefault-$LING.perl";
-	do "./linguakit_original/$PROGS/AdapterFreeling-${LING}.perl";
-	do "./linguakit_original/$PROGS/saidaCoNLL-fa.perl";
+	do "$basedir/linguakit_original/$DIRPARSER/parserDefault-$LING.perl";
+	do "$basedir/linguakit_original/$PROGS/AdapterFreeling-${LING}.perl";
+	do "$basedir/linguakit_original/$PROGS/saidaCoNLL-fa.perl";
 
-	do "./linguakit_original/tagger/$LING/sentences-${LING}_exe.perl";
-	do "./linguakit_original/tagger/$LING/tokens-${LING}_exe.perl";
-	do "./linguakit_original/tagger/$LING/splitter-${LING}_exe.perl";
-	do "./linguakit_original/tagger/$LING/lemma-${LING}_exe.perl";
-	do "./linguakit_original/tagger/$LING/ner-${LING}_exe.perl";
-	do "./linguakit_original/tagger/$LING/tagger-${LING}_exe.perl" ;
-	do "./linguakit_original/tagger/$LING/nec-${LING}_exe.perl";
+	do "$basedir/linguakit_original/tagger/$LING/sentences-${LING}_exe.perl";
+	do "$basedir/linguakit_original/tagger/$LING/tokens-${LING}_exe.perl";
+	do "$basedir/linguakit_original/tagger/$LING/splitter-${LING}_exe.perl";
+	do "$basedir/linguakit_original/tagger/$LING/lemma-${LING}_exe.perl";
+	do "$basedir/linguakit_original/tagger/$LING/ner-${LING}_exe.perl";
+	do "$basedir/linguakit_original/tagger/$LING/tagger-${LING}_exe.perl" ;
+	do "$basedir/linguakit_original/tagger/$LING/nec-${LING}_exe.perl";
 
 }
 
-do "./linguakit_original/tagger/coref/coref_exe.perl";
+do "$basedir/linguakit_original/tagger/coref/coref_exe.perl";
 
-do "./linguakit_original/sentiment/nbayes.perl";
+do "$basedir/linguakit_original/sentiment/nbayes.perl";
 
-do "./linguakit_original/mwe/mwe.perl";
-do "./linguakit_original/mwe/filtro_galextra.perl";
-do "./linguakit_original/mwe/six_tokens.perl";
+do "$basedir/linguakit_original/mwe/mwe.perl";
+do "$basedir/linguakit_original/mwe/filtro_galextra.perl";
+do "$basedir/linguakit_original/mwe/six_tokens.perl";
 
-do "./linguakit_original/keywords/keywords_exe.perl";
-do "./linguakit_original/triples/triples_exe.perl";
-do "./linguakit_original/linking/linking_exe.perl";
-do "./linguakit_original/summarizer/summarizer_exe.perl";
-do "./linguakit_original/summarizer/Sentence.pl";
-do "./linguakit_original/conjugator/conjugator_exe.perl";
-do "./linguakit_original/avalingua/avalingua_exe.perl";
+do "$basedir/linguakit_original/keywords/keywords_exe.perl";
+do "$basedir/linguakit_original/triples/triples_exe.perl";
+do "$basedir/linguakit_original/linking/linking_exe.perl";
+do "$basedir/linguakit_original/summarizer/summarizer_exe.perl";
+do "$basedir/linguakit_original/summarizer/Sentence.pl";
+do "$basedir/linguakit_original/conjugator/conjugator_exe.perl";
+do "$basedir/linguakit_original/avalingua/avalingua_exe.perl";
 
-do "./linguakit_original/lanrecog/lanrecog.perl";
-do "./linguakit_original/lanrecog/build_lex.perl";
+do "$basedir/linguakit_original/lanrecog/lanrecog.perl";
+do "$basedir/linguakit_original/lanrecog/build_lex.perl";
 
-do "./linguakit_original/kwic/kwic.perl";
+do "$basedir/linguakit_original/kwic/kwic.perl";
 
 ############## API ################
 
