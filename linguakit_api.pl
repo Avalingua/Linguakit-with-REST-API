@@ -17,7 +17,14 @@ use Dancer2;
 
 my $PROGS = "scripts";
 my $DIRPARSER = "parsers";
-my $basedir = getcwd($0);
+
+use Cwd 'abs_path';
+use File::Basename;
+my $path = abs_path($0);
+my ($filename, $basedir) = fileparse($path);
+print "$basedir\n";
+
+
 
 my @lings = ("es","pt","gl","en");
 @lings = ("es");

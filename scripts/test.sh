@@ -1,7 +1,6 @@
 #!/bin/sh
 
 HOST="localhost:3000/v2.0"
-#HOST="http://api.linguakit.com/v2.0"
 #HOST="http://api.linguakit.com:3000/v2.0"
 curl -X POST -H "Content-Type: application/x-www-form-urlencoded; charset=utf-8" -d "lang=es&output=fa&text=Rosalía es una niña excepcionalmente buena."  $HOST/dep
 echo "\n"
